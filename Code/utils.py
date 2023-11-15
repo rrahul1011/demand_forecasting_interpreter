@@ -52,7 +52,7 @@ def open_ai_key():
 ## Logo in the side bar
 def add_logo():
     # Path to your image
-    image_path = "/Users/rahulkushwaha/Desktop/SigmoidGenai/demand_forecasting_interpreter/Data/cropped-Sigmoid_logo_3x.png"
+    image_path = "Data/cropped-Sigmoid_logo_3x.png"
     image_width = 250
     image_height = 120
     background_position_x = 0.03
