@@ -1,0 +1,173 @@
+**Analysis No_1 : Missing Forecast**
+   Number of unique keys : 2809
+   No of unique keys having Null volume entries : 0
+   No of Null volume entries : 0
+
+
+**Analysis No_2 : Negative Forecast**
+   Number of unique keys having negative values count : 0
+   No of negative volume entries : 0
+
+
+**Analysis No_3 : Accuracy Values**
+|    |   3_Mon_Cum% |   3_Mon_Cum_A% |   3_Mon_Cum_B% |   3_Mon_Cum_C% |
+|---:|-------------:|---------------:|---------------:|---------------:|
+|  0 |      64.2322 |        72.0893 |        67.1429 |        55.3629 |
+
+
+**Accuracy metric taking above 80% for class A and above 70% for class B and C : 73.48314606741573**
+
+
+
+**Analysis No_4 : Forecasted Value for all keys present in historical data**
+   No. of unique keys in historical data : 2810
+   For moderate scenario no. keys not present wrt to historical are 1
+
+
+
+
+**Analysis No_5 : Trend Analysis**
+|    |   trend% |   trend_A% |
+|---:|---------:|-----------:|
+|  0 |  67.9554 |    67.8344 |
+
+
+
+**Analysis No_6 : Flat Line Present**
+   No of moderate scenario keys having less than 5 unique points : 0
+
+
+
+**Analysis No_7 : Country_Sector Mising**
+  Number of Country Sector Pair are missing : -27
+
+  Country_Sector Missing :
+    Slovakia_AGGREGATED Whisk(e)y, Uganda_AGGREGATED Whisk(e)y, Germany_AGGREGATED Whisk(e)y, Tanzania_AGGREGATED Whisk(e)y, Greece_AGGREGATED Whisk(e)y, Romania_AGGREGATED Whisk(e)y, France_AGGREGATED Whisk(e)y, Denmark_Other, Croatia_AGGREGATED Whisk(e)y, Sweden_AGGREGATED Whisk(e)y, South Korea_Other Spirits, Poland_AGGREGATED Whisk(e)y, Tanzania_Soft Drinks, Netherlands_AGGREGATED Whisk(e)y, Austria_Tequila, Kazakhstan_AGGREGATED Whisk(e)y, Great Britain_AGGREGATED Whisk(e)y, Tanzania_Malt Scotch, Czechia_AGGREGATED Whisk(e)y, Serbia_AGGREGATED Whisk(e)y, Portugal_AGGREGATED Whisk(e)y, Nigeria_AGGREGATED Whisk(e)y, Belgium_AGGREGATED Whisk(e)y, Nigeria_Soft Drinks, Australia_AGGREGATED Whisk(e)y, Norway_AGGREGATED Whisk(e)y, Denmark_AGGREGATED Whisk(e)y, Spain_AGGREGATED Whisk(e)y, Finland_AGGREGATED Whisk(e)y, Austria_AGGREGATED Whisk(e)y, Kenya_AGGREGATED Whisk(e)y, Northern Ireland_AGGREGATED Whisk(e)y, Taiwan_AGGREGATED Whisk(e)y, Italy_Soft Drinks, Switzerland_AGGREGATED Whisk(e)y, Romania_Other Whisk(e)y, South Korea_AGGREGATED Whisk(e)y, Republic Of Ireland_AGGREGATED Whisk(e)y, Hungary_AGGREGATED Whisk(e)y, Bulgaria_AGGREGATED Whisk(e)y, Italy_AGGREGATED Whisk(e)y, 
+
+  Sector Missing :
+    Soft Drinks, AGGREGATED Whisk(e)y, Other, 
+
+
+
+
+**Analysis No_8 : YOY Growth**
+  Numbers of Keys Having more than 20% Growth:
+    2023: 463
+    2024: 1348
+    2025: 9
+
+
+
+**Analysis No_9 : Models Runing**
+  Model which are Not Runing: 
+|                 |   0 |
+|:----------------|----:|
+| arima           |   7 |
+| arima_te        |   5 |
+| prophet         |   0 |
+| prophet_te      |   0 |
+| ets             |   2 |
+| ets_te          |   2 |
+| arimax          |  29 |
+| arimax_te       |  29 |
+| prophet_exog    |   0 |
+| prophet_exog_te |   0 |
+| ensemble2       |  29 |
+| ensemble2_te    |  29 |
+| ensemble3       |  29 |
+| ensemble3_te    |  29 |
+| ensemble4       |  29 |
+| ensemble4_te    |  29 |
+
+
+
+**Analysis No_10 : Exogenous Features **
+Percentage Of Exogenous Parameter having zero value:
+| Exo_Feature         |   Percentage_Zero |
+|:--------------------|------------------:|
+| complete_lockdown   |             96.27 |
+| closure             |             56.75 |
+| pricing             |             56.06 |
+| interest_rate       |             49.39 |
+| google_trends       |             44.5  |
+| gdp_real            |             16.22 |
+| population          |             12.94 |
+| average_income_real |              0    |
+| income_real         |              0    |
+| cpi                 |              0    |
+| unemployment_rate   |              0    |
+
+
+
+**Analysis No_11 : 3 month Accuracy Values **
+|    |   Cummilative% |   Cum_A% |   Cum_B% |   Cum_C% |
+|---:|---------------:|---------:|---------:|---------:|
+|  2 |          57.13 |    66.14 |    61.32 |    45.41 |
+
+
+
+**Analysis No_12 : Historical Data Comparison **
+Number of keys with more than 5.0% Historical deviation in 2019:  896
+Number of keys with more than 5.0% Historical deviation in 2020: 1068
+Number of keys with more than 5.0% Historical deviation in 2021:  497
+Number of keys with more than 5.0% Historical deviation in 2022:  364
+
+
+
+**Analysis No_13 : Accuracy Values For demand radar file**
+|    |   3_Mon_Cum% |   3_Mon_Cum_A% |   3_Mon_Cum_B% |   3_Mon_Cum_C% |
+|---:|-------------:|---------------:|---------------:|---------------:|
+|  0 |      63.4831 |        71.2919 |        65.8929 |        55.2546 |
+
+
+
+**Analysis No_14 : Spikes in Data **
+| Key                                    |   Number_of_peaks |
+|:---------------------------------------|------------------:|
+| Kenya_On-trade_Brandy / Cognac_Premium |                 6 |
+| Uruguay_On-trade_Malt Scotch_Standard  |                 6 |
+
+
+
+**Analysis No_15 : Missing keys in current release compare to previous release **
+Number of keys which are in previous release but not in current release --- 47
+
+
+Class wise distribution:-
+|    |   Percentage |
+|:---|-------------:|
+| C  |        57.45 |
+| B  |        23.4  |
+| A  |        19.15 |
+
+
+Country-sector of the missing keys that belongs either to class A or class B
+
+
+|    | country_sector              |
+|---:|:----------------------------|
+|  0 | Australia_Aperitif          |
+|  1 | Australia_Rum               |
+|  2 | Australia_Vodka             |
+|  3 | Austria_Brandy / Cognac     |
+|  4 | Belgium_Beer                |
+|  5 | Belgium_Brandy / Cognac     |
+|  6 | Bulgaria_Other Whisk(e)y    |
+|  7 | Croatia_Rum                 |
+|  8 | Denmark_Beer                |
+|  9 | Netherlands_Aperitif        |
+| 10 | Netherlands_Beer            |
+| 11 | Netherlands_Brandy / Cognac |
+| 12 | Netherlands_Other Spirits   |
+| 13 | Switzerland_Beer            |
+| 14 | Switzerland_Cider           |
+| 15 | Taiwan_Blended Scotch       |
+| 16 | Taiwan_Japanese Whisky      |
+| 17 | Uruguay_Other Whisk(e)y     |
+
+
+
+**Analysis No_16 :Accuracy metric taking above 80% for class A and above 70% for class B and C : **
+|      |   3_Mon_Cum%_Overall |   3_Mon_Cum%_A |   3_Mon_Cum%_B |   3_Mon_Cum%_C |
+|:-----|---------------------:|---------------:|---------------:|---------------:|
+| %key |              73.4831 |        72.0893 |        78.8393 |        67.9307 |
