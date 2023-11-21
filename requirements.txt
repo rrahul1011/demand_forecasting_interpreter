@@ -5,4 +5,4 @@ streamlit
 langchain
 openai
 llama_index
-PIL
+Pillow
