@@ -8,3 +8,4 @@ llama_index
 Pillow
 PyPDF2
 openpyxl
+tabulate
