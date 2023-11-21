@@ -7,3 +7,4 @@ openai
 llama_index
 Pillow
 PyPDF2
+openpyxl
