@@ -11,8 +11,8 @@ from langchain.prompts import ChatPromptTemplate
 ##Page Configuration
 configure_streamlit_page()
 add_logo()
-
 openai_api_key=st.session_state["openai_api_key"]
+add_contact_info()
 
 
 

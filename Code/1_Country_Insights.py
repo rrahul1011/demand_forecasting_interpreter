@@ -12,12 +12,12 @@ from function import select_country,country_wise_analysis
 ##Page Configuration
 configure_streamlit_page()
 add_logo()
-openai_api_key=add_contact_info()
+
 if "openai_api_key" not in st.session_state:
     st.session_state["openai_api_key"]=""
 openai_api_key=open_ai_key()
 st.session_state["openai_api_key"]=openai_api_key
-
+openai_api_key=add_contact_info()
 ##Main Content
 st.markdown("#### <span style='color: #265B8C;'>Country Insights</span>", unsafe_allow_html=True)
 st.markdown("<p style='color: dark grey;'>Your single destination for a comprehensive country overview.</p>", unsafe_allow_html=True)

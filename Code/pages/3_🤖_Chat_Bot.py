@@ -9,8 +9,8 @@ from llama_index import SimpleDirectoryReader
 ##Page Configuration
 configure_streamlit_page()
 add_logo()
-add_contact_info()
 openai.api_key = st.session_state["openai_api_key"]
+add_contact_info()
 
 
 if "messages" not in st.session_state.keys(): # Initialize the chat message history
