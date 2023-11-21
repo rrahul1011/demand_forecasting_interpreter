@@ -34,8 +34,8 @@ def visualize_timeseries(df, level, country, channel, sector, price_tier):
     chart_data = df_t.set_index("month")
     title = "_".join([country] + [val for val in [channel, sector, price_tier] if val])
     color_discrete_map = {
-        "historical": " #FF4B4B",
-        "forecasted": "blue"
+        "historical": " blue",
+        "forecasted": "darkorange"
     }
 
     volume_chart = px.line(
@@ -44,39 +44,41 @@ def visualize_timeseries(df, level, country, channel, sector, price_tier):
         y="volume",
         title=title,
         color="scenario",
-        color_discrete_map=color_discrete_map
+        color_discrete_map=color_discrete_map,
+        markers=True
     )
     volume_chart.update_layout(
     plot_bgcolor='white',
     paper_bgcolor='white',
     font_color='black' ,
-    height=300, 
+    height=250, 
     width=800,
-    margin=dict(l=50, r=10, t=50, b=10) 
-    
-    )
-    volume_chart.update_layout(xaxis_title="Month", yaxis_title="volume")
+    margin=dict(l=50, r=10, t=50, b=10) ,
+    xaxis_title="Month", 
+    yaxis_title="volume",
+    legend=dict(x=0, y=-0.2, orientation='h')
+     )
     df_t["year"] = pd.to_datetime(df_t["month"]).dt.year
     df_yoy = df_t.groupby(["year"]).sum()["volume"].reset_index()
     grouped_yoy = df_yoy[0:-1]
     grouped_yoy['yoy_growth'] = grouped_yoy['volume'].pct_change(periods=1) * 100
     grouped_yoy=grouped_yoy[["year","yoy_growth"]]
-    color_discrete_map_y = {
-        "yoy_growth": " darkmagenta",
-    
-    }
-    yoy_chart= px.bar(data_frame=grouped_yoy,x="year",
-                      y="yoy_growth",title="YoY Change",
-                      text=grouped_yoy["yoy_growth"].apply(lambda x: f'{x:.2f}'),
-                      color_discrete_map=color_discrete_map_y
-                    )
+    yoy_chart = px.bar(
+        data_frame=grouped_yoy,
+        x="year",
+        y="yoy_growth",
+        title="YoY Change",
+        text=grouped_yoy["yoy_growth"].apply(lambda x: f'{x:.2f}'),
+        color=grouped_yoy["yoy_growth"].apply(lambda x: "Negative" if x <= 0 else "Positive"),  
+    )
+
     yoy_chart.update_layout(
-    plot_bgcolor=' white',
-    paper_bgcolor='white',
-    font_color='black',
-    height=300,
-    margin=dict(l=50, r=50, t=50, b=10)  
-   
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+        font_color='black',
+        height=250,
+        margin=dict(l=50, r=50, t=50, b=10),
+        legend=dict(x=0, y=-0.2, orientation='h')
     )
     
     col1, col2 = st.columns([0.7,0.3])

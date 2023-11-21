@@ -26,7 +26,7 @@ df_acc= pd.read_excel("Data/accuracy.xlsx")
 df_diageo = pd.read_csv("Data/Diageo_gen.csv")
 geo=select_country(df_diageo)
 st.markdown("---")
-col1,col2=st.columns([0.5,0.5])
+col1,col2=st.columns([0.45,0.55])
 with col1:
     st.markdown("##### Key Matrics")
     # Accuracy Analysis
