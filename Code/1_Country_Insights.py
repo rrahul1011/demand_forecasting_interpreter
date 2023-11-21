@@ -39,7 +39,7 @@ with col1:
             f"<span style='color: #265B8C;'>Percentage Key having Accuracy above 80% for class A and above 70% for class B and C</span> :<span style='color: {color};'>{accuracy}%</span>",
             unsafe_allow_html=True
         )
-        st.write(df_acc.reset_index(drop=True).to_markdown())
+        st.write(df_acc.reset_index(drop=True))
 
 
     ### Negative Forecast Analysis
