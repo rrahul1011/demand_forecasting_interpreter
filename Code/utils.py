@@ -37,15 +37,10 @@ def open_ai_key():
     openai_api_key = st.sidebar.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     col1, col2 = st.sidebar.columns(2)
     submit_button = col1.button("Submit")
-    clear_button = col2.button("Clear")
-
     if submit_button:
         # Assign the submitted API key to openai_api_key
         openai_api_key = openai_api_key
-    
-    if clear_button:
-        openai_api_key = ""  # Clear the input field
-    return openai_api_key
+
 
 
 
