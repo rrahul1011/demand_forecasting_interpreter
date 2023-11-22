@@ -324,7 +324,7 @@ def country_wise_analysis(df, geo):
     font_color='black',
     height=300,
     margin=dict(l=50, r=50, t=50, b=10),
-    legend=dict(x=1, y=-0.2, orientation='h') )
+    legend=dict(x=0, y=-0.2, orientation='h') )
     fig2.update_layout(
     plot_bgcolor=' white',
     paper_bgcolor='white',
