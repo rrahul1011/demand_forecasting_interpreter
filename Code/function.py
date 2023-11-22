@@ -332,6 +332,7 @@ def country_wise_analysis(df, geo):
     margin=dict(l=50, r=50, t=50, b=10) )
     # fig_c1,fig_c2=st.columns([0.55,0.45])
     # with fig_c1:
+    fig2.update_traces(marker_color='#1e3d7d')
     st.plotly_chart(fig1)
     # with fig_c2:
     st.plotly_chart(fig2)
@@ -343,7 +344,7 @@ def select_country(df):
     col_cou1,col_cou2,col_cou3,col_cou4=st.columns(4)
     with col_cou1:
         geo_options = df["geo"].unique().tolist()
-        st.markdown('<p style="border: 2px solid grey; padding: 1px; font-weight: bold;color: #265B8C;size:4;">Select Country:</p>', unsafe_allow_html=True)
-        selected_geo = st.selectbox("", geo_options)
+        #st.markdown('<p style="border: 2px solid grey; padding: 1px; font-weight: bold;color: #265B8C;size:4;">Select Country:</p>', unsafe_allow_html=True)
+        selected_geo = st.selectbox("Select Country", geo_options)
     return selected_geo
 
