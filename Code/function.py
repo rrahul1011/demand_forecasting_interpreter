@@ -34,15 +34,15 @@ def visualize_timeseries(df, level, country, channel, sector, price_tier):
     chart_data = df_t.set_index("month")
     title = "_".join([country] + [val for val in [channel, sector, price_tier] if val])
     color_discrete_map = {
-        "historical": " darkblue",
-        "forecasted": "darkorange"
+        "historical": "#1e3d7d",
+        "forecasted": "#ff7a00"
     }
 
     volume_chart = px.line(
         chart_data,
         x=chart_data.index,
         y="volume",
-        title=title,
+        title="Demand Forecast In Terms of Sales Volume",
         color="scenario",
         color_discrete_map=color_discrete_map,
         markers=True,
@@ -80,18 +80,21 @@ def visualize_timeseries(df, level, country, channel, sector, price_tier):
         font_color='black',
         height=350,
         margin=dict(l=50, r=50, t=50, b=10),
-        legend=dict(x=0, y=-0.2, orientation='h')
+        legend=dict(x=1, y=-0.2, orientation='h')
     )
-    yoy_chart.update_traces(marker_color='darkblue')
+    yoy_chart.update_traces(marker_color='#1e3d7d')
+    #st.markdown("---")
     
     col1, col2 = st.columns([0.6,0.4])
 
     # Display the volume_chart in the first column
     with col1:
+        #st.markdown("###### Demand Forecast In Terms of Sales Volume")
         st.plotly_chart(volume_chart, use_container_width=True)
     
     # Display the yoy_chart in the second column
     with col2:
+        #st.markdown('###### Year On Year Change')
         st.plotly_chart(yoy_chart, use_container_width=True)
 
     return df_t

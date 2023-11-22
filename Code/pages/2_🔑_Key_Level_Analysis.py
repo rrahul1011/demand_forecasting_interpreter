@@ -18,9 +18,9 @@ if openai_api_key:
 ##Reading the data
     df_dash = pd.read_csv("Data/Diageo_gen.csv")
 
-    #st.markdown("#### <span style='color: #265B8C;'>Explore Granular Details</span>", unsafe_allow_html=True)
+    #st.markdown("#### <span style='color: #1e3d7d;'>Explore Granular Details</span>", unsafe_allow_html=True)
     #st.markdown("#### <p style='color: dark grey;'><b>Are you looking to dive deep into specific details? I'm here to help!</b></p>", unsafe_allow_html=True)
-    st.markdown("##### <span style='color: #265B8C;'>Select Your Parameter</span>", unsafe_allow_html=True)
+    st.markdown("##### <span style='color: #1e3d7d;'>Select Your Parameter</span>", unsafe_allow_html=True)
 
     def main():
         """
@@ -53,7 +53,7 @@ if openai_api_key:
             c1,c2,c3,c4=st.columns(4)
 
             with c1:
-                st.markdown("###### <span style='color: #265B8C;'>Select Hierarchy</span>", unsafe_allow_html=True)
+                st.markdown("###### <span style='color: #1e3d7d;'>Select Hierarchy</span>", unsafe_allow_html=True)
                 # Create columns for checkboxes
             col1, col2, col3 = st.columns(3)
                 
@@ -81,21 +81,21 @@ if openai_api_key:
             with col1:
                 if "channel" in selected_levels:
                     channel_options = d["channel"].unique().tolist()
-                        #st.markdown('<p style="border: 2px solid red; padding: 1px; font-weight: bold;color: #265B8C;size:4;">Select Channel:</p>', unsafe_allow_html=True)
+                        #st.markdown('<p style="border: 2px solid red; padding: 1px; font-weight: bold;color: #1e3d7d;size:4;">Select Channel:</p>', unsafe_allow_html=True)
                     selected_channel = st.selectbox("Select Channel", channel_options)
                     d=d[d["channel"]==selected_channel]
 
             with col2:
                 if "sector" in selected_levels:
                     sector_options = d["sector"].unique().tolist()
-                        #st.markdown('<p style="border: 2px solid red; padding: 1px; font-weight: bold;color: #265B8C;size:4;">Select Sector:</p>', unsafe_allow_html=True)
+                        #st.markdown('<p style="border: 2px solid red; padding: 1px; font-weight: bold;color: #1e3d7d;size:4;">Select Sector:</p>', unsafe_allow_html=True)
                     selected_sector = st.selectbox("Select Sector", sector_options)
                     d=d[d["sector"]==selected_sector]
 
             with col3:
                 if "price_tier" in selected_levels:
                     price_tier_options = d["price_tier"].unique().tolist()
-                        #st.markdown('<p style="border: 2px solid red; padding: 1px; font-weight: bold;color: #265B8C;size:4;">Select Price Tier:</p>', unsafe_allow_html=True)
+                        #st.markdown('<p style="border: 2px solid red; padding: 1px; font-weight: bold;color: #1e3d7d;size:4;">Select Price Tier:</p>', unsafe_allow_html=True)
                     selected_price_tier = st.selectbox("Select Price Tier", price_tier_options)
 
             return selected_levels, selected_channel, selected_sector, selected_price_tier,selected_geo
@@ -134,11 +134,11 @@ if openai_api_key:
             justify-content: flex-end;
         }
         div.stButton > button:first-child {
-            background-color: #FF4B4B;
+            background-color: #d91e18;
             color:#ffffff;
         }
         div.stButton > button:hover {
-            background-color: blue;
+            background-color: #06c480;
             color:#ff0000;
             }
         </style>""", unsafe_allow_html=True)
@@ -183,7 +183,7 @@ if openai_api_key:
             user_analysis = analysis_template.format_messages(instruction_analyis=instruction_analysis,format_analysis=format_analysis)
 
             with st.spinner('Generating...'):
-                st.markdown("###### <span style='color: #265B8C;'>Inshights and Findings</span>", unsafe_allow_html=True)
+                st.markdown("###### <span style='color: #1e3d7d;'>Inshights and Findings</span>", unsafe_allow_html=True)
 
                 response = chat(user_analysis)
                 text=response.content
@@ -208,7 +208,7 @@ if openai_api_key:
 
                     # Use HTML tags to style the heading and content
                     styled_text = (
-                        f'<div style="border: 1px solid #265B8C; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
+                        f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
                         f'<div style="font-size: 14px; color: black;"><b>{heading_of_interest}:</b></div>' 
                         f"{result_dict[heading_of_interest]}"
                         f'</div>'
@@ -221,7 +221,7 @@ if openai_api_key:
 
                     # Use HTML tags to style the heading and content
                     styled_text = (
-                        f'<div style="border: 1px solid #265B8C; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
+                        f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
                         f'<div style="font-size: 14px; color:black;"><b>{heading_of_interest}:</b></div>' 
                         f"{result_dict[heading_of_interest]}"
                         f'</div>'
@@ -234,7 +234,7 @@ if openai_api_key:
 
                     # Use HTML tags to style the heading and content
                     styled_text = (
-                        f'<div style="border: 1px solid #265B8C; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
+                        f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
                         f'<div style="font-size: 14px; color: black;"><b>{heading_of_interest}:</b></div>' 
                         f"{result_dict[heading_of_interest]}"
                         f'</div>'
@@ -247,7 +247,7 @@ if openai_api_key:
 
                     # Use HTML tags to style the heading and content
                     styled_text = (
-                        f'<div style="border: 1px solid #265B8C; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
+                        f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: orange; color: black;border-radius: 5px;width: 220px; height: 350px;"">'
                         f'<div style="font-size: 14px; color: black;"><b>{heading_of_interest}:</b></div>' 
                         f"{result_dict[heading_of_interest]}"
                         f'</div>'
@@ -260,7 +260,7 @@ if openai_api_key:
 
                     # Use HTML tags to style the heading and content
                     styled_text = (
-                        f'<div style="border: 1px solid #265B8C; padding: 3px; background-color: green; color: white;border-radius: 5px;width: 220px; height: 350px;"">'
+                        f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: green; color: white;border-radius: 5px;width: 220px; height: 350px;"">'
                         f'<div style="font-size: 14px; color: white;"><b>{heading_of_interest}:</b></div>' 
                         f"{result_dict[heading_of_interest]}"
                         f'</div>'

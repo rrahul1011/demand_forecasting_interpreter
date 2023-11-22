@@ -15,7 +15,7 @@ add_logo()
 
 add_contact_info()
 ##Main Content
-st.markdown("#### <span style='color: #265B8C;'>Country Insights</span>", unsafe_allow_html=True)
+st.markdown("#### <span style='color: #1e3d7d;'>Country Insights</span>", unsafe_allow_html=True)
 st.markdown("<p style='color: dark grey;'>Your single destination for a comprehensive country overview.</p>", unsafe_allow_html=True)
 
 df_acc= pd.read_excel("Data/accuracy.xlsx")
@@ -32,7 +32,7 @@ with col1:
 
     with st.expander(title, expanded=False):
         st.markdown(
-            f"<span style='color: #265B8C;'>Percentage Key having Accuracy above 80% for class A and above 70% for class B and C</span> :<span style='color: {color};'>{accuracy}%</span>",
+            f"<span style='color: #1e3d7d;'>Percentage Key having Accuracy above 80% for class A and above 70% for class B and C</span> :<span style='color: {color};'>{accuracy}%</span>",
             unsafe_allow_html=True
         )
         st.write(df_acc.reset_index(drop=True))
