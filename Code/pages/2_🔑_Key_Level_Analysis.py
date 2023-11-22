@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import add_logo,add_contact_info,configure_streamlit_page
+from utils import add_logo,add_contact_info,configure_streamlit_page,open_ai_key
 import pandas as pd
 import streamlit as st 
 from function import visualize_timeseries ,yoy_growth,calculate_trend_slope_dataframe,\
@@ -11,11 +11,8 @@ from langchain.prompts import ChatPromptTemplate
 ##Page Configuration
 configure_streamlit_page()
 add_logo()
-openai_api_key=st.session_state["openai_api_key"]
+openai_api_key=open_ai_key()
 add_contact_info()
-
-
-
 
 ##Reading the data
 df_dash = pd.read_csv("Data/Diageo_gen.csv")

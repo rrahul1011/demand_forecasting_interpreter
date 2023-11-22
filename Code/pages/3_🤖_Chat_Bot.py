@@ -9,7 +9,7 @@ from llama_index import SimpleDirectoryReader
 ##Page Configuration
 configure_streamlit_page()
 add_logo()
-openai.api_key = st.session_state["openai_api_key"]
+openai.api_key = open_ai_key()
 add_contact_info()
 
 

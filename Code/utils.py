@@ -35,26 +35,10 @@ def add_contact_info():
 
 def open_ai_key():
     openai_api_key = st.sidebar.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
-    col1, col2 = st.sidebar.columns(2)
-    m = st.markdown("""
-    <style>
-    div.stButton {
-        display: flex;
-        justify-content: flex-end;
-    }
-    div.stButton > button:first-child {
-        background-color: #FF4B4B;
-        color:#ffffff;
-    }
-    div.stButton > button:hover {
-        background-color: blue;
-        color:#ff0000;
-        }
-    </style>""", unsafe_allow_html=True)
-    submit_button = col1.button("Submit")
+    submit_button = st.sidebar.button("Submit")
     if submit_button:
-        # Assign the submitted API key to openai_api_key
         openai_api_key = openai_api_key
+    return openai_api_key
 
 
 
